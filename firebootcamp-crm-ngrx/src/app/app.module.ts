@@ -9,6 +9,8 @@ import { CompanyListComponent } from './company/company-list/company-list.compon
 import { CompanyEditComponent } from './company/company-edit/company-edit.component';
 import { companyReducer } from './reducers/company.reducer';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,14 @@ import { StoreModule } from '@ngrx/store';
     FormsModule,
     HttpModule,
     AppRouterModule,
-        StoreModule.provideStore({ companies: companyReducer })
-
+    StoreModule.provideStore({ companies: companyReducer }),
+    StoreDevtoolsModule.instrumentStore({
+      monitor: useLogMonitor({
+        visible: true,
+        position: 'right'
+      })
+    }),
+    StoreLogMonitorModule
   ],
   providers: [
     CompanyService
