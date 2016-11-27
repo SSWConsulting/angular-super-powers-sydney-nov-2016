@@ -12,12 +12,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let company of companies | async">
+        <tr *ngFor="let company of companies">
             <td>{{company.name}}</td>
             <td>{{company.email}}</td>
             <td>{{company.phone}}</td>
             <td class="btn-column">
-                <button  routerLink="/company/edit/{{company.id}}" class="btn btn-default">Edit</button>
+                <button routerLink="/company/edit/{{company.id}}" class="btn btn-default">Edit</button>
                 <button (click)="deleteCompany(company.id)" class="btn btn-default">Delete</button>
             </td>
         </tr>

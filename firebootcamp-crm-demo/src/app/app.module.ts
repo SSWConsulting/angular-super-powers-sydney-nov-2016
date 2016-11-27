@@ -1,11 +1,11 @@
+import { AppRouterModule } from './app.routes';
 import { CompanyService } from './company/company.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppRoutesModule } from './app.routes';
-import { AppComponent } from './app.component';
 import { CompanyListComponent } from './company/company-list/company-list.component';
+import { AppComponent } from './app.component';
 import { CompanyEditComponent } from './company/company-edit/company-edit.component';
 
 @NgModule({
@@ -18,9 +18,11 @@ import { CompanyEditComponent } from './company/company-edit/company-edit.compon
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutesModule
+    AppRouterModule
   ],
-  providers: [CompanyService],
+  providers: [
+    CompanyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
