@@ -1,6 +1,6 @@
 # Warning: Code not maintained.
 
-This code was written during a one day course and is available to help students who attended on the day.
+This code was written during a one day [FireBootCamp](http://firebootcamp.com) course and is available to help students who attended on the day.
 
 It will not be updated or maintained.
 
